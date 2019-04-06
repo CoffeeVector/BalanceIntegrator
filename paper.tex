@@ -58,10 +58,11 @@ We will attempt to investigate the possibility of achieving the same effect usin
 A varying density in the rod will have two drawbacks, the first being the difficulty of manufacturing one, and the second being the difficulty of visualizing the integrator at work.
 \begin{center}
 	\begin{tikzpicture}
-		\draw[gray, thick] (-3, 0) -- (0, 0);
+		\draw[black, thick] (-3, 0) -- (0, 0);
 		\filldraw[black] (-3, 0) circle (2pt);
-		\draw[gray, thick] (0, 0) -- (1/2, -0.87) -- (-1/2, -0.87) -- (0, 0);
+		\draw[black, thick] (0, 0) -- (1/2, -0.87) -- (-1/2, -0.87) -- (0, 0);
 		\draw[scale=1,domain=0:3,smooth,variable=\x,black]  plot ({\x},{\x * \x * (sin(\x*50) + 1)/10});
+		\draw[black, thick] (2, 0) -- (2, 0.79) node[midway, anchor=west] {$h(x)$};
 	\end{tikzpicture}
 \end{center}
 \begin{proof}
