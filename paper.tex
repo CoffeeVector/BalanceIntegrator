@@ -67,31 +67,40 @@ A varying density in the rod will have two drawbacks, the first being the diffic
 \begin{proof}
 	Let $h(x)$ be the height of the bar with respect to the level of the scale.
 	\begin{align*}
-		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}dF\\
-		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}gdm\\
-		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}g\rho dx\\
+		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}\times dF\\
+		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}\sin\theta dF\\
+		% Add more figures here to better explain where \sin\theta comes from
+		\tau &= \int_0^L \sqrt{x^2 + h^2(x)}\frac{x}{h(x)} dF\\
+		\tau &= \int_0^L x\frac{\sqrt{x^2 + h^2(x)}}{\sqrt{h^2(x)}}dF\\
+		\tau &= \int_0^L x\sqrt{\frac{x^2 + h^2(x)}{h^2(x)}}dF\\
+		\tau &= \int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}dF\\
+		\tau &= \int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}gdm\\
+		\tau &= \int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}g\rho dx\\
 	\end{align*}
 	In this case, $\rho$ is a constant, so we can take it out of the integral.
 	If you so choose, you may simply assume that $\rho$ is 1.
 	\begin{align*}
-		\tau &= g\rho\int_0^L \sqrt{x^2 + h^2(x)}dx\\
+		\tau &= g\rho\int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}dx\\
 	\end{align*}
 	Just like last time, we want $\tau$ on the right to be equal (in the opposite direction) to the $\tau$ from the point mass on the left.
 	\begin{align*}
-		mg &= g\rho\int_0^L \sqrt{x^2 + h^2(x)}dx\\
-		m &= \rho\int_0^L \sqrt{x^2 + h^2(x)}dx\\
+		m &= \rho\int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}dx\\
 	\end{align*}
 	Also like last time, we want $m$ to be the answer to the integral $\int_0^L f(x) dx$
 	\begin{align*}
-		\int_0^L f(x) dx = \rho\int_0^L \sqrt{x^2 + h^2(x)}dx\\
+		\int_0^Lf(x)dx &= \rho\int_0^L x\sqrt{1 + \frac{x^2}{h^2(x)}}dx\\
 	\end{align*}
 	Therefore, the integrands being the same is a solution to the above equation.
 	\begin{align*}
-		f(x) = \rho\sqrt{x^2 + h^2(x)}\\
-		f^2(x) = \rho^2(x^2 + h^2(x))\\
-		\frac{f^2(x)}{\rho^2} = x^2 + h^2(x)\\
-		h^2(x) = \frac{f^2(x)}{\rho^2} - x^2\\
-		h(x) = \sqrt{\frac{f^2(x)}{\rho^2} - x^2}\\
+		f(x) &= \rho x\sqrt{1 + \frac{x^2}{h^2(x)}}\\
+		\frac{f(x)}{x\rho} &= \sqrt{1 + \frac{x^2}{h^2(x)}}\\
+		(\frac{f(x)}{x\rho})^2 &= 1 + \frac{x^2}{h^2(x)}\\
+		\frac{x^2}{h^2(x)} &= (\frac{f(x)}{x\rho})^2 - 1\\
+		\frac{h^2(x)}{x^2} &= \frac{1}{(\frac{f(x)}{x\rho})^2 - 1}\\
+		h^2(x) &= \frac{x^2}{(\frac{f(x)}{x\rho})^2 - 1}\\
+		h(x) &= \sqrt{\frac{x^2}{(\frac{f(x)}{x\rho})^2 - 1}}\\
+		h(x) &= \sqrt{\frac{x^4}{(\frac{f(x)}{\rho})^2 - x^2}}\\
+		h(x) &= x^2\sqrt{\frac{1}{(\frac{f(x)}{\rho})^2 - x^2}}\\
 	\end{align*}
 \end{proof}
 \end{document}
