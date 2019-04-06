@@ -103,6 +103,19 @@ A varying density in the rod will have two drawbacks, the first being the diffic
 		h(x) &= \sqrt{\frac{x^4}{(\frac{f(x)}{\rho})^2 - x^2}}\\
 		h(x) &= x^2\sqrt{\frac{1}{(\frac{f(x)}{\rho})^2 - x^2}}\\
 		h(x) &= x^2\sqrt{\frac{\rho^2}{f^2(x) - (\rho x)^2}}\\
+		h(x) &= \rho x^2\sqrt{\frac{1}{f^2(x) - (\rho x)^2}}\\
 	\end{align*}
 \end{proof}
+\section{Using method for approximating $\pi$}
+A classic example of a method for computing something would be $\pi$.
+We will use the following definite integral.
+\begin{align*}
+	\pi = \int_0^1 \frac{4}{1 + x^2}dx
+\end{align*}
+Thus, $f(x)$ and $h(x)$ would be:
+\begin{align*}
+	f(x) &= \frac{4}{1 + x^2}\\
+	h(x) &= \rho x^2\sqrt{\frac{1}{f^2(x) - (\rho x)^2}}\\
+	h(x) &= \rho x^2\sqrt{\frac{1}{(\frac{4}{1 + x^2})^2 - (\rho x)^2}}\\
+\end{align*}
 \end{document}
